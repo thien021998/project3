@@ -1,0 +1,82 @@
+<div>
+    <h1>Sản phẩm</h1>
+    <br>
+    <a name="Thêm sản phẩm" id="" class="btn btn-primary" href="/products/addproduct" role="button">Thêm sản phẩm</a>
+
+    <table class="table table-hover mt-5">
+        <tr>
+
+            <th>Ảnh</th>
+            <th>Tên</th>
+            <th>Thương hiệu</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Kích cỡ</th>
+            <th>Danh mục sản phẩm</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+
+
+
+        {{#each product}}
+        <tr>
+            <td>
+                {{!-- {{#each this}} --}}
+                <img style="width: 100px; height:100px" src="{{image}}" alt="">
+                {{!-- {{/each}} --}}
+            </td>
+            <td>
+                {{!-- {{#each this}} --}}
+                {{name}}
+                {{!-- {{/each}} --}}
+            </td>
+            <td>
+                {{!-- {{#each this}} --}}
+                {{brand}}
+                {{!-- {{/each}} --}}
+            </td>
+            <td>
+                {{!-- {{#each this}} --}}
+                {{price}}
+                {{!-- {{/each}} --}}
+            </td>
+            <td>
+                {{!-- {{#each this}} --}}
+                {{amount}}
+                {{!-- {{/each}} --}}
+            </td>
+            <td>
+                {{!-- {{#each this}} --}}
+                {{namesize}}
+                {{!-- {{/each}} --}}
+            </td>
+            <td>
+                {{!-- {{#each this}} --}}
+                {{producttype}}
+                {{!-- {{/each}} --}}
+            </td>
+            <td>
+                <a href="./edit/{{_id}}" class="btn btn-primary">Sửa</a>
+            </td>
+            <td>
+                <a href="./xoa/{{_id}}" class="btn btn-danger">Xóa</a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+     <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item {{style}}"><a class="page-link" href="?page={{pre}}">Previous</a></li>
+                {{#each arr}}
+                <li class="page-item"><a class="page-link" href="?page={{this}}">{{this}}
+                        <span class="sr-only">(current)</span></a></li>
+                {{/each}}
+                {{#if next }}
+                <li class="page-item"><a class="page-link" href="?page={{next}}">Next</a></li>
+                {{/if}}
+
+            </ul>
+        </nav>
+</div>

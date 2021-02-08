@@ -1,0 +1,32 @@
+<div class="container pt-4">
+    <h1>Danh mục sản phẩm</h1>
+
+    <form action="" method="post">
+        <input class="form-control" type="text" name="name">
+        <a><button class="btn btn-primary">Thêm</button></a>
+    </form>
+
+    <table class="table table-hover mt-5">
+        <tr>
+            <th>Tên danh mục</th>
+            <th></th>
+        </tr>
+        {{#each producttype}}
+        <tr>
+            <td>
+            
+                {{name}}
+              
+            </td>
+            
+            <td>
+                <a href="./deleteproducttype/{{_id}}"  class="btn btn-danger">Xóa</a>
+            </td>
+        </tr>
+        
+        {{/each}}
+
+    </table>
+
+
+</div>
